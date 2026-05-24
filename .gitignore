@@ -1,0 +1,91 @@
+# =========================
+# Datasets
+# =========================
+
+data/raw/
+data/processed/
+data/splits/
+
+# keep structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/splits/.gitkeep
+
+
+# =========================
+# Models
+# =========================
+
+models/
+!models/.gitkeep
+
+
+# =========================
+# Outputs
+# =========================
+
+outputs/
+!outputs/.gitkeep
+
+
+# =========================
+# Jupyter
+# =========================
+
+.ipynb_checkpoints/
+
+*.nbconvert.ipynb
+
+
+# =========================
+# Python
+# =========================
+
+__pycache__/
+
+*.pyc
+*.pyo
+
+.pytest_cache/
+
+.coverage
+
+
+# =========================
+# Virtual Environments
+# =========================
+
+venv/
+env/
+.venv/
+
+conda-meta/
+
+*.conda
+
+
+# =========================
+# IDE
+# =========================
+
+.vscode/
+
+.idea/
+
+
+# =========================
+# OS
+# =========================
+
+.DS_Store
+
+Thumbs.db
+
+
+# =========================
+# Temporary
+# =========================
+
+*.tmp
+
+*.log
