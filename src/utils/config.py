@@ -47,6 +47,26 @@ TEST_DIR = (
 )
 
 
+MFCC_DIR = (
+    PROCESSED_DIR
+    / "mfcc"
+)
+
+MFCC_TRAIN_PATH = (
+    MFCC_DIR
+    / "mfcc_train.csv"
+)
+
+MFCC_VALIDATION_PATH = (
+    MFCC_DIR
+    / "mfcc_validation.csv"
+)
+
+MFCC_EXTERNAL_PATH = (
+    MFCC_DIR
+    / "mfcc_external.csv"
+)
+
 # ================================
 # Metadata Files
 # ================================
