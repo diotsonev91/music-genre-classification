@@ -62,28 +62,30 @@ MFCC_VALIDATION_PATH = (
     / "mfcc_validation.csv"
 )
 
-MFCC_EXTERNAL_PATH = (
+MFCC_TEST_PATH = (
     MFCC_DIR
-    / "mfcc_external.csv"
+    / "mfcc_test.csv"
 )
+
+
 
 # ================================
 # Metadata Files
 # ================================
 
-GTZAN_TRAIN_PATH = (
+TRAIN_METADATA_PATH = (
     TRAIN_DIR
-    / "gtzan_train.csv"
+    / "train_metadata.csv"
 )
 
-GTZAN_VALIDATION_PATH = (
+VALIDATION_METADATA_PATH = (
     VALIDATION_DIR
-    / "gtzan_validation.csv"
+    / "validation_metadata.csv"
 )
 
-FMA_EXTERNAL_PATH = (
+TEST_METADATA_PATH = (
     TEST_DIR
-    / "fma_external.csv"
+    / "test_metadata.csv"
 )
 
 
@@ -122,3 +124,7 @@ SHARED_GENRES = {
 
     "Rock": "rock",
 }
+
+SHARED_LABELS = list(
+    SHARED_GENRES.values()
+)

@@ -45,8 +45,10 @@ def load_fma_tracks(metadata_path: Path) -> pd.DataFrame:
 
 def select_fma_medium_shared_genres(
     tracks: pd.DataFrame,
-    shared_genres: dict
+    shared_genres: dict,
+    fma_audio_path: Path
 ) -> pd.DataFrame:
+
     fma_medium = tracks[
         tracks[("set", "subset")] == "medium"
     ].copy()
@@ -58,16 +60,23 @@ def select_fma_medium_shared_genres(
     rows = []
 
     for track_id, row in fma_medium.iterrows():
+
         original_genre = row[("track", "genre_top")]
         label = shared_genres[original_genre]
 
         folder = str(track_id).zfill(6)[:3]
         filename = str(track_id).zfill(6) + ".mp3"
 
+        filepath = (
+            fma_audio_path
+            / folder
+            / filename
+        )
+
         rows.append({
             "dataset": "fma_medium",
             "track_id": track_id,
-            "filepath": str(folder + "/" + filename),
+            "filepath": str(filepath),
             "original_genre": original_genre,
             "label": label,
             "duration": row[("track", "duration")],
