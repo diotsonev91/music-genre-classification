@@ -67,6 +67,64 @@ MFCC_TEST_PATH = (
     / "mfcc_test.csv"
 )
 
+# ================================
+# Model and Output Artifacts
+# ================================
+
+OUTPUTS_DIR = (
+    PROJECT_ROOT
+    / "outputs"
+)
+
+MODELS_DIR = (
+    PROJECT_ROOT
+    / "models"
+)
+
+CLASSICAL_ML_OUTPUT_DIR = (
+    OUTPUTS_DIR
+    / "classical_ml"
+)
+
+CLASSICAL_ML_MODEL_DIR = (
+    MODELS_DIR
+    / "classical_ml"
+)
+
+BEST_CLASSICAL_MODEL_PATH = (
+    CLASSICAL_ML_MODEL_DIR
+    / "best_classical_model.joblib"
+)
+
+CLASSICAL_LABEL_ENCODER_PATH = (
+    CLASSICAL_ML_MODEL_DIR
+    / "label_encoder.joblib"
+)
+
+CLASSICAL_SCALER_PATH = (
+    CLASSICAL_ML_MODEL_DIR
+    / "best_model_scaler.joblib"
+)
+
+CLASSICAL_METRICS_SUMMARY_PATH = (
+    CLASSICAL_ML_OUTPUT_DIR
+    / "classical_ml_metrics_summary.csv"
+)
+
+CLASSICAL_TEST_CONFUSION_MATRIX_PATH = (
+    CLASSICAL_ML_OUTPUT_DIR
+    / "test_confusion_matrix.png"
+)
+
+CLASSICAL_VALIDATION_REPORTS_PATH = (
+    CLASSICAL_ML_OUTPUT_DIR
+    / "validation_classification_reports.csv"
+)
+
+CLASSICAL_TEST_REPORT_PATH = (
+    CLASSICAL_ML_OUTPUT_DIR
+    / "test_classification_report.csv"
+)
 
 
 # ================================
