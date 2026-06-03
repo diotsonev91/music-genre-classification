@@ -67,6 +67,42 @@ MFCC_TEST_PATH = (
     / "mfcc_test.csv"
 )
 
+
+MEL_DIR = (
+    PROCESSED_DIR
+    / "mel"
+)
+
+MEL_TRAIN_PATH = (
+    MEL_DIR
+    / "mel_train.npy"
+)
+
+MEL_VALIDATION_PATH = (
+    MEL_DIR
+    / "mel_validation.npy"
+)
+
+MEL_TEST_PATH = (
+    MEL_DIR
+    / "mel_test.npy"
+)
+
+MEL_TRAIN_LABELS_PATH = (
+    MEL_DIR
+    / "mel_train_labels.npy"
+)
+
+MEL_VALIDATION_LABELS_PATH = (
+    MEL_DIR
+    / "mel_validation_labels.npy"
+)
+
+MEL_TEST_LABELS_PATH = (
+    MEL_DIR
+    / "mel_test_labels.npy"
+)
+
 # ================================
 # Model and Output Artifacts
 # ================================
@@ -127,6 +163,47 @@ CLASSICAL_TEST_REPORT_PATH = (
 )
 
 
+CNN_OUTPUT_DIR = (
+    OUTPUTS_DIR
+    / "cnn"
+)
+
+CNN_MODEL_DIR = (
+    MODELS_DIR
+    / "cnn"
+)
+
+BEST_CNN_MODEL_PATH = (
+    CNN_MODEL_DIR
+    / "best_cnn_model.pt"
+)
+
+CNN_LABEL_ENCODER_PATH = (
+    CNN_MODEL_DIR
+    / "cnn_label_encoder.joblib"
+)
+
+CNN_METRICS_SUMMARY_PATH = (
+    CNN_OUTPUT_DIR
+    / "cnn_metrics_summary.csv"
+)
+
+CNN_TEST_CONFUSION_MATRIX_PATH = (
+    CNN_OUTPUT_DIR
+    / "cnn_test_confusion_matrix.png"
+)
+
+CNN_TRAINING_HISTORY_PATH = (
+    CNN_OUTPUT_DIR
+    / "cnn_training_history.csv"
+)
+
+CNN_TEST_REPORT_PATH = (
+    CNN_OUTPUT_DIR
+    / "cnn_test_classification_report.csv"
+)
+
+
 # ================================
 # Metadata Files
 # ================================
@@ -160,6 +237,46 @@ MONO = True
 CROP_MODE = "center"
 
 NORMALIZATION = None
+
+
+# ================================
+# Mel Spectrograms and CNN
+# ================================
+
+N_MELS = 128
+
+N_FFT = 2048
+
+HOP_LENGTH = 512
+
+MEL_TARGET_FRAMES = (
+    int(
+        SAMPLE_RATE
+        * TARGET_DURATION
+    )
+    // HOP_LENGTH
+    + 1
+)
+
+MEL_N_FFT = N_FFT
+
+MEL_HOP_LENGTH = HOP_LENGTH
+
+MEL_EXPECTED_FRAMES = MEL_TARGET_FRAMES
+
+CNN_INPUT_SHAPE = (
+    1,
+    N_MELS,
+    MEL_TARGET_FRAMES
+)
+
+CNN_BATCH_SIZE = 32
+
+CNN_EPOCHS = 30
+
+CNN_LEARNING_RATE = 0.001
+
+CNN_RANDOM_STATE = 42
 
 
 # ================================
