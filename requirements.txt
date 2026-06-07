@@ -6,3 +6,4 @@ librosa
 scikit-learn
 torch
 torchaudio
+torchvision

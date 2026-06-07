@@ -87,11 +87,24 @@ def predict_torch_model(
 
         device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    dataset = TensorDataset(
-        torch.tensor(
+    if isinstance(
+        X,
+        np.ndarray
+    ):
+        X_tensor = torch.from_numpy(
+            X
+        ).to(
+            dtype=torch.float32
+        )
+
+    else:
+        X_tensor = torch.as_tensor(
             X,
             dtype=torch.float32
         )
+
+    dataset = TensorDataset(
+        X_tensor
     )
 
     data_loader = DataLoader(

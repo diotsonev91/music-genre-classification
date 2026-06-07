@@ -204,6 +204,47 @@ CNN_TEST_REPORT_PATH = (
 )
 
 
+MOBILENET_OUTPUT_DIR = (
+    OUTPUTS_DIR
+    / "mobilenet"
+)
+
+MOBILENET_MODEL_DIR = (
+    MODELS_DIR
+    / "mobilenet"
+)
+
+BEST_MOBILENET_MODEL_PATH = (
+    MOBILENET_MODEL_DIR
+    / "best_mobilenet_model.pt"
+)
+
+MOBILENET_LABEL_ENCODER_PATH = (
+    MOBILENET_MODEL_DIR
+    / "mobilenet_label_encoder.joblib"
+)
+
+MOBILENET_METRICS_SUMMARY_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_metrics_summary.csv"
+)
+
+MOBILENET_TRAINING_HISTORY_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_training_history.csv"
+)
+
+MOBILENET_TEST_REPORT_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_test_classification_report.csv"
+)
+
+MOBILENET_TEST_CONFUSION_MATRIX_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_test_confusion_matrix.png"
+)
+
+
 # ================================
 # Metadata Files
 # ================================
@@ -277,6 +318,12 @@ CNN_EPOCHS = 30
 CNN_LEARNING_RATE = 0.001
 
 CNN_RANDOM_STATE = 42
+
+MOBILENET_BATCH_SIZE = 32
+
+MOBILENET_EPOCHS = 15
+
+MOBILENET_LEARNING_RATE = 0.0003
 
 
 # ================================

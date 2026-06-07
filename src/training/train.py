@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import joblib
+import numpy as np
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
@@ -56,15 +57,41 @@ def create_tensor_loader(
     batch_size,
     shuffle=False
 ):
-    dataset = TensorDataset(
-        torch.tensor(
+    if isinstance(
+        X,
+        np.ndarray
+    ):
+        X_tensor = torch.from_numpy(
+            X
+        ).to(
+            dtype=torch.float32
+        )
+
+    else:
+        X_tensor = torch.as_tensor(
             X,
             dtype=torch.float32
-        ),
-        torch.tensor(
+        )
+
+    if isinstance(
+        y,
+        np.ndarray
+    ):
+        y_tensor = torch.from_numpy(
+            y
+        ).to(
+            dtype=torch.long
+        )
+
+    else:
+        y_tensor = torch.as_tensor(
             y,
             dtype=torch.long
         )
+
+    dataset = TensorDataset(
+        X_tensor,
+        y_tensor
     )
 
     return DataLoader(
@@ -111,7 +138,11 @@ def train_torch_model(
     criterion = nn.CrossEntropyLoss()
 
     optimizer = torch.optim.Adam(
-        model.parameters(),
+        (
+            parameter
+            for parameter in model.parameters()
+            if parameter.requires_grad
+        ),
         lr=learning_rate
     )
 
