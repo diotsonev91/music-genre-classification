@@ -244,6 +244,51 @@ MOBILENET_TEST_CONFUSION_MATRIX_PATH = (
     / "mobilenet_test_confusion_matrix.png"
 )
 
+QUANTIZED_MODEL_DIR = (
+    MODELS_DIR
+    / "quantized"
+)
+
+FP32_MOBILENET_DEPLOYMENT_PATH = (
+    QUANTIZED_MODEL_DIR
+    / "mobilenet_v2_fp32_deployment.pt"
+)
+
+STATIC_INT8_MOBILENET_MODEL_PATH = (
+    QUANTIZED_MODEL_DIR
+    / "mobilenet_v2_static_int8_quantized.pt"
+)
+
+DYNAMIC_LINEAR_MOBILENET_MODEL_PATH = (
+    QUANTIZED_MODEL_DIR
+    / "mobilenet_v2_dynamic_linear_quantized.pt"
+)
+
+CLASSIFIER_DYNAMIC_MOBILENET_MODEL_PATH = (
+    QUANTIZED_MODEL_DIR
+    / "mobilenet_v2_classifier_dynamic_quantized.pt"
+)
+
+QUANTIZATION_METRICS_SUMMARY_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_quantization_metrics_summary.csv"
+)
+
+QUANTIZATION_SIZE_COMPARISON_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_quantization_size_comparison.csv"
+)
+
+QUANTIZATION_SPEED_COMPARISON_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_quantization_speed_comparison.csv"
+)
+
+QUANTIZATION_CLASSIFICATION_REPORTS_PATH = (
+    MOBILENET_OUTPUT_DIR
+    / "mobilenet_quantization_classification_reports.csv"
+)
+
 
 # ================================
 # Metadata Files
