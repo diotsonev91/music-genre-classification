@@ -26,6 +26,9 @@ Purpose: Primary dataset used for baseline experiments and model evaluation.
 
 Download: GTZAN Genre Collection on Kaggle.
 
+Download link:
+https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification
+
 The implementation expects GTZAN audio files under `data/raw/gtzan/genres/`, with one folder per genre.
 
 ### FMA Dataset
@@ -38,6 +41,9 @@ Download:
 - `fma_metadata.zip`
 
 Source: FMA Official Repository.
+
+Download link:
+https://github.com/mdeff/fma
 
 The implementation expects FMA audio under `data/raw/fma_medium/` and metadata, including `tracks.csv`, under `data/raw/fma_metadata/`.
 

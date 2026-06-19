@@ -4,6 +4,8 @@ pandas
 matplotlib
 librosa
 scikit-learn
+joblib
 torch
 torchaudio
 torchvision
+pytest
